@@ -26,7 +26,7 @@ using Photon.Pun;
 
         private void Update()
         {
-            if (!view.IsMine) return;
+            if (view.IsMine) return;
             
             Horizontal = Input.GetAxis("Horizontal");
             Vertical = Input.GetAxis("Vertical");
