@@ -5,8 +5,9 @@ using Photon.Pun;
 
 public class ComponentsToDisable : MonoBehaviour
 {
+    [SerializeField] Behaviour[] componentsToDisable;
     private PhotonView view;
-    private Camera camera;
+    [SerializeField] private Camera camera;
     void Start()
     {
         view = GetComponent<PhotonView>();
@@ -15,12 +16,15 @@ public class ComponentsToDisable : MonoBehaviour
         if (!view.IsMine)
         {
             camera.gameObject.SetActive(false);
+            Disable();
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    void Disable()
     {
-        
+        for (int i = 0; i < componentsToDisable.Length; i++)
+        {
+            componentsToDisable[i].gameObject.SetActive(false);
+        }
     }
 }

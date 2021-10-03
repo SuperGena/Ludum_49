@@ -500,6 +500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d0c1925232cb84290d43f8c06a0baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 4670631495068694904}
 --- !u!114 &8452645491002674198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -590,8 +591,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7929862941078982237}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2bdbb6d0f9502604da1a8cc2d40e15cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  componentsToDisable:
+  - {fileID: 4670631495068694904}
+  - {fileID: 3223593722668245511}
+  - {fileID: 8452645491002674198}
+  - {fileID: 1288198968340673519}
+  camera: {fileID: 4670631495068694904}

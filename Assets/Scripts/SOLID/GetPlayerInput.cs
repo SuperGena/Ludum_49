@@ -12,29 +12,36 @@ using Photon.Pun;
 
         public event Action OnFire = delegate { };
 
+        [SerializeField] private Camera camera;
+        
         private PhotonView view;
 
         private void Start()
         {
             view = GetComponent<PhotonView>();
-
+            
             if (!view.IsMine)
             {
-                
+                camera.gameObject.SetActive(false);
             }
         }
 
         private void Update()
         {
-            if (view.IsMine) return;
-            
-            Horizontal = Input.GetAxis("Horizontal");
-            Vertical = Input.GetAxis("Vertical");
-            FireWeapon = Input.GetKey(KeyCode.Mouse0);
-
-            if (FireWeapon)
+            if (view.IsMine)
             {
-                OnFire();
+                Horizontal = Input.GetAxis("Horizontal");
+                Vertical = Input.GetAxis("Vertical");
+                FireWeapon = Input.GetKey(KeyCode.Mouse0);
+
+                if (FireWeapon)
+                {
+                    OnFire();
+                }
+            }
+            else
+            {
+                return;
             }
         }
     }
