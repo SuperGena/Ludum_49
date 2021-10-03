@@ -19,11 +19,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public float timeBetweenUpdates = 1.5f;
     private float nextUpdateTime;
-    
-    private void Start()
-    {
-        PhotonNetwork.JoinLobby();
-    }
 
     public void OnClickCreate()
     {
@@ -81,6 +76,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     {
         roomPanel.SetActive(false);
         lobbyPanel.SetActive(true);
+        PhotonNetwork.LoadLevel("Lobby");
     }
 
     public override void OnConnectedToMaster()

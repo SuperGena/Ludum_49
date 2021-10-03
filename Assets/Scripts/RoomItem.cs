@@ -23,4 +23,9 @@ public class RoomItem : MonoBehaviour
     {
         manager.JoinRoom(roomName.text);
     }
+
+    public void LeaveRoom()
+    {
+        manager.OnClickLeaveRoom();
+    }
 }

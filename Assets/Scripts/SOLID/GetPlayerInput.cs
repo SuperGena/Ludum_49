@@ -12,7 +12,7 @@ using Photon.Pun;
 
         public event Action OnFire = delegate { };
 
-        [SerializeField] private Camera camera;
+        public Camera camera;
         
         private PhotonView view;
 
