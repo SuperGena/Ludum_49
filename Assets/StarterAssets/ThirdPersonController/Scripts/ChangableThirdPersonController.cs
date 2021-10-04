@@ -123,6 +123,7 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
+			Attack();
 		}
 
 		private void LateUpdate()
@@ -247,7 +248,8 @@ namespace StarterAssets
 				if (_hasAnimator)
 				{
 					_animator.SetBool(_animIDJump, false);
-					_animator.SetBool(_animIDFreeFall, false);
+					//_animator.SetTrigger(_animIDFreeFall);
+					//_animator.SetBool(_animIDFreeFall, false);
 				}
 
 				// stop our velocity dropping infinitely when grounded
@@ -290,7 +292,8 @@ namespace StarterAssets
 					// update animator if using character
 					if (_hasAnimator)
 					{
-						_animator.SetBool(_animIDFreeFall, true);
+						_animator.SetTrigger(_animIDFreeFall);
+						//_animator.SetBool(_animIDFreeFall);
 					}
 				}
 
@@ -304,6 +307,14 @@ namespace StarterAssets
 				_verticalVelocity += CurGravity * Time.deltaTime;
 			}
 		}
+
+		private void Attack()
+		{
+			if (Mouse.current.leftButton.wasPressedThisFrame)
+			{
+				_animator.SetBool(_animIDFreeFall, true);
+			}
+		} 
 
 		private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
 		{
