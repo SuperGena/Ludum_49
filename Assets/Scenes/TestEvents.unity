@@ -644,7 +644,7 @@ MonoBehaviour:
   RotationSmoothTime: 0.12
   SpeedChangeRate: 10
   JumpHeight: 1.2
-  Gravity: -15
+  DefaultGravity: -15
   JumpTimeout: 0.5
   FallTimeout: 0.15
   Grounded: 1
@@ -713,6 +713,10 @@ PrefabInstance:
       propertyPath: platform
       value: 
       objectReference: {fileID: 358724514}
+    - target: {fileID: 8052419980225500673, guid: 2d2c9172620e32542bd14cf4308b3df3, type: 3}
+      propertyPath: controllableModel
+      value: 
+      objectReference: {fileID: 7502706781362522903}
     - target: {fileID: 8052419980225500678, guid: 2d2c9172620e32542bd14cf4308b3df3, type: 3}
       propertyPath: m_Name
       value: UnstableEventsManager
