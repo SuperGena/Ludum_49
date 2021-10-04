@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ChaoticDonutFallRampage.Core;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -14,6 +15,7 @@ namespace StarterAssets
 #endif
 	public class ChangableThirdPersonController : MonoBehaviour
 	{
+		public bool activeState = true;
 		public bool NormalControls;
 		[Header("Player")]
 		[Tooltip("Move speed of the character in m/s")]
@@ -115,10 +117,13 @@ namespace StarterAssets
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
 			CurGravity = DefaultGravity;
+			activeState = true;
 		}
 
 		private void Update()
 		{
+			if (!activeState)
+				return;
 			_hasAnimator = TryGetComponent(out _animator);
 			
 			JumpAndGravity();
@@ -307,7 +312,7 @@ namespace StarterAssets
 				_verticalVelocity += CurGravity * Time.deltaTime;
 			}
 		}
-
+		public event System.Action<Creature> OnHit;
 		private void Attack()
 		{
 			if (Mouse.current.leftButton.wasPressedThisFrame)
@@ -315,6 +320,11 @@ namespace StarterAssets
 				_animator.SetBool(_animIDAttack, true);
 			}
 		} 
+		protected virtual void DeadlDamageTO(GameObject raycastedCreatureObject)
+		{
+			var raycastedCreature = raycastedCreatureObject?.GetComponent<PlayerControllableAvatar>();
+			OnHit?.Invoke(raycastedCreature?.playerAvatar?.AvatarCreature);
+        }
 
 		private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
 		{

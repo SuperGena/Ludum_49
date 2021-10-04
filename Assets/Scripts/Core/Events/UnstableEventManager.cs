@@ -18,10 +18,10 @@ namespace ChaoticDonutFallRampage.Core.Events
         {
             Timer = duration;
             //text = new UnityEngine.UI.Text();
-            //Events.Add(new RotatePlatformUnstableEvent() { platform = platform });
+            Events.Add(new RotatePlatformUnstableEvent() { platform = platform });
             Events.Add(new UnstableEvent());
-            //Events.Add(new ReversedControllsUnstableEvent() { controllableModels = new GameObject[] {controllableModel } });
-            //Events.Add(new ChangeGravityUnstableEvent() { controllableModels = new GameObject[] {controllableModel } });
+            Events.Add(new ReversedControllsUnstableEvent() { controllableModels = new GameObject[] {controllableModel } });
+            Events.Add(new ChangeGravityUnstableEvent() { controllableModels = new GameObject[] {controllableModel } });
             Events.Add(new ItemRainUnstableEvent() { fallingObjects = fallingObjects, platform = platform });
             CurrentEvent = new UnstableEvent();
         }
@@ -44,7 +44,7 @@ namespace ChaoticDonutFallRampage.Core.Events
         protected void Update()
         {
             Timer -= Time.deltaTime;
-            text.text = ((int)Timer).ToString();
+            //text.text = ((int)Timer).ToString();
             if (Timer > 0)
             {
                 if (CurrentEvent is UpdatableUnstableEvent uue)
