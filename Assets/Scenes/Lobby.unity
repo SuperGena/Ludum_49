@@ -1887,7 +1887,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1948603157}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78c7f408fb75d6c4199fa9112746e969, type: 3}
+  m_Script: {fileID: 11500000, guid: bfebec6e70d92704ca2d06c2d533f929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   roomInputField: {fileID: 330653339}
@@ -1944,7 +1944,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00013138141}
+  m_AnchoredPosition: {x: 0, y: -0.0000137246825}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2080612564
