@@ -1,6 +1,6 @@
 ﻿namespace ChaoticDonutFallRampage.Core.Events
 {
-    public class ItemRainUnstableEvent : UnstableEvent
+    public class ItemRainUnstableEvent : UpdatableUnstableEvent
     {
         public override void UpdateEventEffect()
         {

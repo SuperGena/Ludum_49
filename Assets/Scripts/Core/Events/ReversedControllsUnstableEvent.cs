@@ -2,7 +2,7 @@
 using System.Linq;
 namespace ChaoticDonutFallRampage.Core.Events
 {
-    public class ChangeGravityUnstableEvent : StartEndUnstableEvent
+    public class ReversedControllsUnstableEvent : StartEndUnstableEvent
     {
         public GameObject[] controllableModels;
         public override void End()
@@ -10,17 +10,17 @@ namespace ChaoticDonutFallRampage.Core.Events
             controllableModels.ToList().ForEach(controllableModel =>
             {
                 var controller = controllableModel.GetComponent<StarterAssets.ChangableThirdPersonController>();
-                controller.CurGravity = controller.DefaultGravity;
+                controller.NormalControls = true;
             });
         }
-
         public override void Start()
         {
             controllableModels.ToList().ForEach(controllableModel =>
             {
                 var controller = controllableModel.GetComponent<StarterAssets.ChangableThirdPersonController>();
-                controller.CurGravity = controller.DefaultGravity / 10;
+                controller.NormalControls = false;
             });
         }
+
     }
 }

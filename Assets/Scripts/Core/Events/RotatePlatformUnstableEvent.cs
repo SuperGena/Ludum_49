@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace ChaoticDonutFallRampage.Core.Events
 {
-    public class RotatePlatformUnstableEvent : UnstableEvent
+    public class RotatePlatformUnstableEvent : UpdatableUnstableEvent
     {
         public GameObject platform;
         public float rotationSpeed = 15f;

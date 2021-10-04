@@ -7,18 +7,19 @@ namespace ChaoticDonutFallRampage.Core.Events
     public class UnstableEventManager : MonoBehaviour
     {
         public GameObject platform;
+        public GameObject controllableModel;
         protected virtual UnstableEvent CurrentEvent { get; set; }
         protected virtual List<UnstableEvent> Events { get; } = new List<UnstableEvent>();
-        protected virtual float Duration { get; set; }
         protected virtual float Timer { get; set; }
+        public float duration = 5f;
         protected void Start()
         {
-            var duration = 5f;
-            Duration = duration;
-            Timer = Duration;
+            Timer = duration;
             Events.Add(new RotatePlatformUnstableEvent() { platform = platform });
-            Events.Add(new EmptyUnstableEvent());
-            CurrentEvent = GetNewUnstableEvent();
+            Events.Add(new UnstableEvent());
+            Events.Add(new ReversedControllsUnstableEvent() { controllableModels = new GameObject[] {controllableModel } });
+            Events.Add(new ChangeGravityUnstableEvent() { controllableModels = new GameObject[] {controllableModel } });
+            CurrentEvent = new UnstableEvent();
         }
         protected virtual UnstableEvent GetNewUnstableEvent()
         {
@@ -40,12 +41,23 @@ namespace ChaoticDonutFallRampage.Core.Events
             Timer -= Time.deltaTime;
             if (Timer > 0)
             {
-                CurrentEvent?.UpdateEventEffect();
+                if (CurrentEvent is UpdatableUnstableEvent uue)
+                {
+                    uue?.UpdateEventEffect();
+                }
             }
             else
             {
-                Timer = Duration;
+                if (CurrentEvent is StartEndUnstableEvent prevSEUE)
+                {
+                    prevSEUE?.End();
+                }
+                Timer = duration;
                 CurrentEvent = GetNewUnstableEvent();
+                if (CurrentEvent is StartEndUnstableEvent newSEUE)
+                {
+                    newSEUE?.Start();
+                }
             }
         }
     }

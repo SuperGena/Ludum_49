@@ -1,8 +1,13 @@
 ﻿namespace ChaoticDonutFallRampage.Core.Events
 {
-    public class UnpsideDownCameraUnstableEvent : UnstableEvent
+    public class UnpsideDownCameraUnstableEvent : StartEndUnstableEvent
     {
-        public override void UpdateEventEffect()
+        public override void End()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void Start()
         {
             throw new System.NotImplementedException();
         }
