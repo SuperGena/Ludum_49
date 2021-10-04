@@ -147,6 +147,36 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!1 &555842034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 555842035}
+  m_Layer: 0
+  m_Name: CountDown
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &555842035
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555842034}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.158677, y: 10.233469, z: 9.156364}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &762158173
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -717,6 +747,34 @@ PrefabInstance:
       propertyPath: controllableModel
       value: 
       objectReference: {fileID: 7502706781362522903}
+    - target: {fileID: 8052419980225500673, guid: 2d2c9172620e32542bd14cf4308b3df3, type: 3}
+      propertyPath: fallingObjects.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8052419980225500673, guid: 2d2c9172620e32542bd14cf4308b3df3, type: 3}
+      propertyPath: fallingObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 679275018596626000, guid: 079e1620ed014864e858a12eed968b5c, type: 3}
+    - target: {fileID: 8052419980225500673, guid: 2d2c9172620e32542bd14cf4308b3df3, type: 3}
+      propertyPath: fallingObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 8355223216921534081, guid: 229b80850ab8c394d91f9b18a5f2512a, type: 3}
+    - target: {fileID: 8052419980225500673, guid: 2d2c9172620e32542bd14cf4308b3df3, type: 3}
+      propertyPath: fallingObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 5432671607581897043, guid: e3d268f095fde9b46a705723d747b823, type: 3}
+    - target: {fileID: 8052419980225500673, guid: 2d2c9172620e32542bd14cf4308b3df3, type: 3}
+      propertyPath: fallingObjects.Array.data[3]
+      value: 
+      objectReference: {fileID: 5432671607581897043, guid: e3d268f095fde9b46a705723d747b823, type: 3}
+    - target: {fileID: 8052419980225500673, guid: 2d2c9172620e32542bd14cf4308b3df3, type: 3}
+      propertyPath: fallingObjects.Array.data[4]
+      value: 
+      objectReference: {fileID: 5432671607581897043, guid: e3d268f095fde9b46a705723d747b823, type: 3}
+    - target: {fileID: 8052419980225500673, guid: 2d2c9172620e32542bd14cf4308b3df3, type: 3}
+      propertyPath: fallingObjects.Array.data[5]
+      value: 
+      objectReference: {fileID: 5432671607581897043, guid: e3d268f095fde9b46a705723d747b823, type: 3}
     - target: {fileID: 8052419980225500678, guid: 2d2c9172620e32542bd14cf4308b3df3, type: 3}
       propertyPath: m_Name
       value: UnstableEventsManager

@@ -1,10 +1,19 @@
-﻿namespace ChaoticDonutFallRampage.Core.Events
+﻿using UnityEngine;
+using System.Linq;
+namespace ChaoticDonutFallRampage.Core.Events
 {
-    public class ItemRainUnstableEvent : UpdatableUnstableEvent
+    public class ItemRainUnstableEvent : StartEndUnstableEvent
     {
-        public override void UpdateEventEffect()
+        public GameObject platform;
+        public GameObject[] fallingObjects;
+        public Transform spawnPlatformTransform;
+        public float spawnHeight = 20f;
+        public int objAm = 20;
+        public float spawnRange = 10f;
+        public float[] objsSpawnTime;
+        public override void Start()
         {
-            throw new System.NotImplementedException();
         }
+        public override void End() { }
     }
 }
