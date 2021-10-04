@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7354286415294932098}
   - component: {fileID: -5753775592689825490}
   - component: {fileID: -8022914824163403413}
+  - component: {fileID: 6782667253689359574}
   m_Layer: 0
   m_Name: Player(Camera+Model+Controller) - Unpack
   m_TagString: Untagged
@@ -91,6 +92,19 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &6782667253689359574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497476161674428855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c2d504e59ab5d479c6b2b6d2ace35e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 4002803677737266514}
 --- !u!1001 &5452867871314896458
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -155,6 +169,11 @@ PrefabInstance:
 --- !u!4 &4002803677737266517 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
+  m_PrefabInstance: {fileID: 5452867871314896458}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &4002803677737266514 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8944336655422409496, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
   m_PrefabInstance: {fileID: 5452867871314896458}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6771512674049084745

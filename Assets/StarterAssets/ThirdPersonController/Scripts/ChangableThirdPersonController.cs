@@ -82,6 +82,7 @@ namespace StarterAssets
 		private int _animIDGrounded;
 		private int _animIDJump;
 		private int _animIDFreeFall;
+		private int _animIDAttack;
 		private int _animIDMotionSpeed;
 
 		private Animator _animator;
@@ -137,6 +138,7 @@ namespace StarterAssets
 			_animIDGrounded = Animator.StringToHash("Grounded");
 			_animIDJump = Animator.StringToHash("Jump");
 			_animIDFreeFall = Animator.StringToHash("FreeFall");
+			_animIDAttack = Animator.StringToHash("Attack");
 			_animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
 		}
 
@@ -248,8 +250,7 @@ namespace StarterAssets
 				if (_hasAnimator)
 				{
 					_animator.SetBool(_animIDJump, false);
-					//_animator.SetTrigger(_animIDFreeFall);
-					//_animator.SetBool(_animIDFreeFall, false);
+					_animator.SetBool(_animIDFreeFall, false);
 				}
 
 				// stop our velocity dropping infinitely when grounded
@@ -292,8 +293,7 @@ namespace StarterAssets
 					// update animator if using character
 					if (_hasAnimator)
 					{
-						_animator.SetTrigger(_animIDFreeFall);
-						//_animator.SetBool(_animIDFreeFall);
+						_animator.SetBool(_animIDFreeFall,true);
 					}
 				}
 
@@ -312,7 +312,7 @@ namespace StarterAssets
 		{
 			if (Mouse.current.leftButton.wasPressedThisFrame)
 			{
-				_animator.SetBool(_animIDFreeFall, true);
+				_animator.SetBool(_animIDAttack, true);
 			}
 		} 
 
